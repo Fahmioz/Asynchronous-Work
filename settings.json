@@ -1,0 +1,13 @@
+{
+  // Use the system JAVA_HOME environment variable. Set JAVA_HOME to your JDK install path.
+  "java.jdt.ls.java.home": "${env:JAVA_HOME}",
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "${env:JAVA_HOME}"
+    }
+  ],
+  // Disable automatic Gradle import for a simple workspace; enable if you use Gradle.
+  "java.import.gradle.enabled": false,
+  "java.import.maven.enabled": true
+}

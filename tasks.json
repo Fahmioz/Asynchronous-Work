@@ -1,0 +1,53 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "javac: compile Main",
+      "type": "shell",
+      "command": "${env:JAVA_HOME}/bin/javac",
+      "args": [
+        "-d",
+        "out",
+        "${workspaceFolder}/src/Main.java"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "java: run Main",
+      "type": "shell",
+      "command": "${env:JAVA_HOME}/bin/java",
+      "args": [
+        "-cp",
+        "out",
+        "Main"
+      ],
+      "dependsOn": "javac: compile Main",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "java: run Main (with input.txt)",
+      "type": "shell",
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "\"${env:JAVA_HOME}/bin/java\" -cp out Main < input.txt"
+      ],
+      "dependsOn": "javac: compile Main",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
